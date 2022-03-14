@@ -1,5 +1,4 @@
 const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
 
 const middle = function(arr) {
   let midArray = [];
@@ -8,9 +7,10 @@ const middle = function(arr) {
   } else if (arr.length % 2 === 1) {
       midArray.push(arr[Math.floor(arr.length / 2)]);
   } else if (arr.length % 2 === 0) {
-      midArray.push(arr[arr.length / 2 - 1], arr[arr.length / 2]);
+      midArray.push(arr[Math.floor(arr.length / 2 - 1)])
+      midArray.push(arr[Math.floor(arr.length / 2)]);
   }
-  return midArray;
+  return midArray
 }
 
 module.exports = middle;
